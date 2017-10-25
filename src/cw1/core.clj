@@ -1,12 +1,12 @@
 (ns cw1.core
-  (:require [kixi.stats.random :as ran]
+  (:require [kixi.stats.random :as k]
             [clojure.core.matrix.operators :as m])
   (:use [clojure.core.matrix]))
 
 
 
 (defn sample_norm []
-  (ran/draw (ran/normal {:mu 0, :sd 1})))
+  (k/draw (k/normal {:mu 0, :sd 1})))
 
 
 (defn multi_sample_norm [list]
@@ -20,3 +20,6 @@
 (def n (vec (repeatedly 600 #(sample_norm))))
 
 (def y (m/+ (m/* x w) n))
+
+(defn solve
+  )
