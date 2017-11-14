@@ -14,49 +14,30 @@
 (ns cw1_worksheet
   (:require [kixi.stats.random :as k]
             [clojure.core.matrix.operators :as m]
+            [clojure.core.matrix.stats :as s]
             [gorilla-plot.core :as plt])
   (:use clojure.core.matrix))
+
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
 
 ;; @@
-(def n_of_samps 600)
-(def training_set_size 500)
-
-(defn sample_norm []
-  (k/draw (k/normal {:mu 0, :sd 1})))
-
-(def w (sample_norm))
-(def x (vec (repeatedly n_of_samps #(sample_norm))))
-(def n (vec (repeatedly n_of_samps #(sample_norm))))
-
-(def y (m/+ (mmul (transpose x) w) n))
-
-
+(defn mean-squared-error [Y_hat Y]
+  (let [n (count Y_hat)
+        delta (map - Y_hat Y)
+        delta_squared (map * delta delta)
+        sum_delta_squared (reduce + delta_squared)
+        ]
+   		(/ sum_delta_squared n)))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/y</span>","value":"#'cw1_worksheet/y"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/mean-squared-error</span>","value":"#'cw1_worksheet/mean-squared-error"}
 ;; <=
 
 ;; @@
-x
-
-;; @@
-;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>1.5316079586225684</span>","value":"1.5316079586225684"},{"type":"html","content":"<span class='clj-double'>1.159966779586114</span>","value":"1.159966779586114"},{"type":"html","content":"<span class='clj-double'>0.5707239916307651</span>","value":"0.5707239916307651"},{"type":"html","content":"<span class='clj-double'>0.8487987951290046</span>","value":"0.8487987951290046"},{"type":"html","content":"<span class='clj-double'>1.2116351349177714</span>","value":"1.2116351349177714"},{"type":"html","content":"<span class='clj-double'>1.4970145414884597</span>","value":"1.4970145414884597"},{"type":"html","content":"<span class='clj-double'>1.375636780356435</span>","value":"1.375636780356435"},{"type":"html","content":"<span class='clj-double'>0.9206076868134131</span>","value":"0.9206076868134131"},{"type":"html","content":"<span class='clj-double'>-0.3552768173542019</span>","value":"-0.3552768173542019"},{"type":"html","content":"<span class='clj-double'>1.4570582054938037</span>","value":"1.4570582054938037"}],"value":"[1.5316079586225684 1.159966779586114 0.5707239916307651 0.8487987951290046 1.2116351349177714 1.4970145414884597 1.375636780356435 0.9206076868134131 -0.3552768173542019 1.4570582054938037]"}
-;; <=
-
-;; @@
-w
-;; @@
-;; =>
-;;; {"type":"html","content":"<span class='clj-double'>0.11926689356693015</span>","value":"0.11926689356693015"}
-;; <=
-
-;; @@
-(defn estimate-w [n_of_samps training_set_size]
+(defn solve-w [n_of_samps training_set_size]
   (let [w_actual (sample_norm)
     	x (vec (repeatedly n_of_samps #(sample_norm)))
     	n (vec (repeatedly n_of_samps #(sample_norm)))
@@ -64,85 +45,54 @@ w
         
         x_train (transpose (matrix [(nth (split-at training_set_size x) 0)]))
         y_train (transpose (matrix [(nth (split-at training_set_size y) 0)]))
+        
+        x_test (transpose (matrix [(nth (split-at training_set_size x) 1)]))
+        y_test (transpose (matrix [(nth (split-at training_set_size y) 1)]))
 
         
-    	w_estimated (mmul (mmul (inverse (mmul (transpose x_train) x_train)) (transpose x_train)) y_train)]
-        (m/- w_actual w_estimated)))
-
-(estimate-w 6000 5500)
+    	w_estimated (mmul (mmul (inverse (mmul (transpose x_train) x_train)) (transpose x_train)) y_train)
+        
+        Y_hat_train (reduce into [] (mmul x_train w_estimated))
+        Y_train (reduce into [] y_train)
+        
+        Y_hat_test (reduce into [] (mmul x_test w_estimated))
+        Y_test (reduce into [] y_test)
+        
+        MSE_train (cw1_worksheet/mean-squared-error Y_hat_train Y_train)
+        MSE_test (cw1_worksheet/mean-squared-error Y_hat_test Y_test)
+        ]
+    	{:MSE_train MSE_train :MSE_test MSE_test}
+    )
+  )
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>0.0011938388733179206</span>","value":"0.0011938388733179206"}],"value":"[0.0011938388733179206]"}],"value":"[[0.0011938388733179206]]"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/solve-w</span>","value":"#'cw1_worksheet/solve-w"}
 ;; <=
 
 ;; @@
-
-(def y_train (transpose (matrix [(nth (split-at training_set_size y) 0)])))
-(def y_test (transpose (matrix [(nth (split-at training_set_size y) 1)])))
-  
-(def x_train (transpose (matrix [(nth (split-at training_set_size x) 0)])))
-(def x_test (transpose (matrix [(nth (split-at training_set_size x) 1)])))
-
+(def train_100 (repeatedly 200 #(solve-w 600 100)))
+(println ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
 
 ;; @@
+;; ->
+;;; [Training set 100 average MSE: 1.0047358409721037 ; Test set 500 average MSE: 1.0108026741256257]
+;;; 
+;; <-
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/x_test</span>","value":"#'cw1_worksheet/x_test"}
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
 
 ;; @@
-(defn solve_for_w [x y]
-  " w = (X'X)^-1.X'.Y "
-  (mmul (mmul (inverse (mmul (transpose x) x)) (transpose x)) y))
-
-;(mmul (mmul (inverse (mmul (transpose x_train) x_train)) (transpose x_train)) y_train) 
+(def train_10 (repeatedly 200 #(solve-w 510 10)))
+(println ["Training set 10 average MSE:" (s/mean (into [] (map :MSE_train train_10))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_10)))])
 ;; @@
+;; ->
+;;; [Training set 10 average MSE: 0.8664354566385987 ; Test set 500 average MSE: 1.135714504086479]
+;;; 
+;; <-
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/solve_for_w</span>","value":"#'cw1_worksheet/solve_for_w"}
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
-
-;; @@
-(def w_estimated (solve_for_w x_train y_train))
-;; @@
-;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/w_estimated</span>","value":"#'cw1_worksheet/w_estimated"}
-;; <=
-
-;; @@
-w
-(m/- w w_estimated)
-;; @@
-;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>-0.006581439084299978</span>","value":"-0.006581439084299978"}],"value":"[-0.006581439084299978]"}],"value":"[[-0.006581439084299978]]"}
-;; <=
-
-;; @@
-(defn generate-vals [n n_training_set]
-  {:n n :n_train n_training_set :w (sample_norm)})
-;; @@
-;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/generate-vals</span>","value":"#'cw1_worksheet/generate-vals"}
-;; <=
-
-;; @@
-(defn calc-sqr-map [x]
-  { :x (matrix [x x])  :y (* x x) })
-
-(calc-sqr-map 3)
-;; @@
-;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:x</span>","value":":x"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-long'>3</span>","value":"3"},{"type":"html","content":"<span class='clj-long'>3</span>","value":"3"}],"value":"[3 3]"}],"value":"[:x [3 3]]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:y</span>","value":":y"},{"type":"html","content":"<span class='clj-long'>9</span>","value":"9"}],"value":"[:y 9]"}],"value":"{:x [3 3], :y 9}"}
-;; <=
-
-;; @@
-(def v (generate-map 10 5))
-;; @@
-;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/v</span>","value":"#'cw1_worksheet/v"}
-;; <=
-
-;; @@
-v
-;; @@
 
 ;; @@
 
