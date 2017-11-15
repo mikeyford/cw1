@@ -15,6 +15,7 @@
   (:require [kixi.stats.random :as k]
             [clojure.core.matrix.operators :as m]
             [clojure.core.matrix.stats :as s]
+            [clojure.core.matrix.random :as r]
             [gorilla-plot.core :as plt])
   (:use clojure.core.matrix))
 
@@ -24,6 +25,10 @@
 ;; <=
 
 ;; @@
+(defn sample_norm []
+  (k/draw (k/normal {:mu 0, :sd 1})))
+
+
 (defn mean-squared-error [Y_hat Y]
   (let [n (count Y_hat)
         delta (map - Y_hat Y)
@@ -37,45 +42,47 @@
 ;; <=
 
 ;; @@
-(defn solve-w [n_of_samps training_set_size]
-  (let [w_actual (sample_norm)
-    	x (vec (repeatedly n_of_samps #(sample_norm)))
-    	n (vec (repeatedly n_of_samps #(sample_norm)))
-    	y (m/+ (mmul (transpose x) w_actual) n)
+(defn solve-w-Rn [n_of_dimensions n_of_samps training_set_size]
+  (let [w (r/sample-normal [n_of_dimensions 1])
+    	X (r/sample-normal [n_of_samps n_of_dimensions])
+    	n (r/sample-normal [n_of_samps 1])
+    	y (m/+ (mmul X w) n)
         
-        x_train (transpose (matrix [(nth (split-at training_set_size x) 0)]))
-        y_train (transpose (matrix [(nth (split-at training_set_size y) 0)]))
+        X_train (submatrix X 0 training_set_size 0 n_of_dimensions)
+        y_train (submatrix y 0 training_set_size 0 1)
         
-        x_test (transpose (matrix [(nth (split-at training_set_size x) 1)]))
-        y_test (transpose (matrix [(nth (split-at training_set_size y) 1)]))
-
         
-    	w_estimated (mmul (mmul (inverse (mmul (transpose x_train) x_train)) (transpose x_train)) y_train)
+        X_test (submatrix X training_set_size (- n_of_samps training_set_size) 0 n_of_dimensions)
+        y_test (submatrix y training_set_size (- n_of_samps training_set_size) 0 1)
         
-        Y_hat_train (reduce into [] (mmul x_train w_estimated))
+        
+        w_estimated (mmul (inverse (mmul (transpose X_train) X_train)) (transpose X_train) y_train)
+        
+        Y_hat_train (reduce into [] (mmul X_train w_estimated))
         Y_train (reduce into [] y_train)
         
-        Y_hat_test (reduce into [] (mmul x_test w_estimated))
+        Y_hat_test (reduce into [] (mmul X_test w_estimated))
         Y_test (reduce into [] y_test)
         
         MSE_train (cw1_worksheet/mean-squared-error Y_hat_train Y_train)
         MSE_test (cw1_worksheet/mean-squared-error Y_hat_test Y_test)
-        ]
+        ]    	
     	{:MSE_train MSE_train :MSE_test MSE_test}
+          
     )
   )
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/solve-w</span>","value":"#'cw1_worksheet/solve-w"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/solve-w-Rn</span>","value":"#'cw1_worksheet/solve-w-Rn"}
 ;; <=
 
 ;; @@
-(def train_100 (repeatedly 200 #(solve-w 600 100)))
+;R1 - training set of 100
+(def train_100 (repeatedly 200 #(solve-w-Rn 1 600 100)))
 (println ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
-
 ;; @@
 ;; ->
-;;; [Training set 100 average MSE: 1.0047358409721037 ; Test set 500 average MSE: 1.0108026741256257]
+;;; [Training set 100 average MSE: 0.9925025122713415 ; Test set 500 average MSE: 1.0038185130416837]
 ;;; 
 ;; <-
 ;; =>
@@ -83,11 +90,39 @@
 ;; <=
 
 ;; @@
-(def train_10 (repeatedly 200 #(solve-w 510 10)))
+;R1 - training set of 10
+(def train_10 (repeatedly 200 #(solve-w-Rn 1 510 10)))
 (println ["Training set 10 average MSE:" (s/mean (into [] (map :MSE_train train_10))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_10)))])
 ;; @@
 ;; ->
-;;; [Training set 10 average MSE: 0.8664354566385987 ; Test set 500 average MSE: 1.135714504086479]
+;;; [Training set 10 average MSE: 0.915732091532317 ; Test set 500 average MSE: 1.1084517508035074]
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+;R10 - training set of 100
+(def train_100 (repeatedly 200 #(solve-w-Rn 10 600 100)))
+(println ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
+;; @@
+;; ->
+;;; [Training set 100 average MSE: 0.8877894017239935 ; Test set 500 average MSE: 1.115648590742282]
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+;R10 - training set of 10
+(def train_10 (repeatedly 200 #(solve-w-Rn 10 510 10)))
+(println ["Training set 10 average MSE:" (s/mean (into [] (map :MSE_train train_10))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_10)))])
+
+;; @@
+;; ->
+;;; [Training set 10 average MSE: 7.399712316178207E-23 ; Test set 500 average MSE: 345.0097631444176]
 ;;; 
 ;; <-
 ;; =>
