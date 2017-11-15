@@ -12,7 +12,7 @@
 
 ;; @@
 (ns cw1_worksheet
-  (:require [kixi.stats.random :as k]
+  (:require ;[kixi.stats.random :as k]
             [clojure.core.matrix.operators :as m]
             [clojure.core.matrix.stats :as s]
             [clojure.core.matrix.random :as r]
@@ -25,8 +25,8 @@
 ;; <=
 
 ;; @@
-(defn sample_norm []
-  (k/draw (k/normal {:mu 0, :sd 1})))
+;(defn sample_norm []
+;  (k/draw (k/normal {:mu 0, :sd 1})))
 
 
 (defn mean-squared-error [Y_hat Y]
@@ -79,23 +79,22 @@
 ;; @@
 ;R1 - training set of 100
 (def train_100 (repeatedly 200 #(solve-w-Rn 1 600 100)))
-(println ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
+(print ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
 ;; @@
 ;; ->
-;;; [Training set 100 average MSE: 0.9925025122713415 ; Test set 500 average MSE: 1.0038185130416837]
-;;; 
+;;; [Training set 100 average MSE: 0.9839982829491721 ; Test set 500 average MSE: 1.0100376206820227]
 ;; <-
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
 
 ;; @@
-;R1 - training set of 10
+;R1 - training set of 100
 (def train_10 (repeatedly 200 #(solve-w-Rn 1 510 10)))
 (println ["Training set 10 average MSE:" (s/mean (into [] (map :MSE_train train_10))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_10)))])
 ;; @@
 ;; ->
-;;; [Training set 10 average MSE: 0.915732091532317 ; Test set 500 average MSE: 1.1084517508035074]
+;;; [Training set 10 average MSE: 0.9329119304333404 ; Test set 500 average MSE: 1.1049274597474106]
 ;;; 
 ;; <-
 ;; =>
@@ -108,7 +107,7 @@
 (println ["Training set 100 average MSE:" (s/mean (into [] (map :MSE_train train_100))) "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
 ;; @@
 ;; ->
-;;; [Training set 100 average MSE: 0.8877894017239935 ; Test set 500 average MSE: 1.115648590742282]
+;;; [Training set 100 average MSE: 0.9078532569519144 ; Test set 500 average MSE: 1.1206457672549677]
 ;;; 
 ;; <-
 ;; =>
@@ -122,7 +121,7 @@
 
 ;; @@
 ;; ->
-;;; [Training set 10 average MSE: 7.399712316178207E-23 ; Test set 500 average MSE: 345.0097631444176]
+;;; [Training set 10 average MSE: 5.535036492403341E-23 ; Test set 500 average MSE: 527.8125651726323]
 ;;; 
 ;; <-
 ;; =>
