@@ -7,5 +7,6 @@
                  [net.mikera/core.matrix "0.61.0"]
                  [kixi/stats "0.3.9"]
                  [net.mikera/vectorz-clj "0.47.0"]
-                 [clj-ml "0.0.3-SNAPSHOT"]]
+                 [clj-ml "0.0.3-SNAPSHOT"]
+                 [kixi/gg4clj "0.1.1-SNAPSHOT" :exclusion [org.clojure/clojure]]]
   :plugins [[lein-gorilla "0.4.0"]])

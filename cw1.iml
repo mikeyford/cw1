@@ -16,6 +16,8 @@
     <orderEntry type="library" name="Leiningen: cider/cider-nrepl:0.10.2" level="project" />
     <orderEntry type="library" name="Leiningen: clj-ml:0.0.3-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Leiningen: clojure-complete:0.2.4" level="project" />
+    <orderEntry type="library" name="Leiningen: gorilla-renderable:1.0.0" level="project" />
+    <orderEntry type="library" name="Leiningen: kixi/gg4clj:0.1.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Leiningen: kixi/stats:0.3.9" level="project" />
     <orderEntry type="library" name="Leiningen: lein-javac:0.0.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Leiningen: net.mikera/clojure-utils:0.8.0" level="project" />
