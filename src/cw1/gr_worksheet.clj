@@ -84,7 +84,7 @@
         "; Test set 500 average MSE:"  (s/mean (into [] (map :MSE_test train_100)))])
 ;; @@
 ;; ->
-;;; [Training set 100 average MSE: 0.9839982829491721 ; Test set 500 average MSE: 1.0100376206820227]
+;;; [Training set 100 average MSE: 0.9917397378841016 ; Test set 500 average MSE: 1.0084804773926117]
 ;; <-
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
@@ -376,6 +376,154 @@
 ;;; {"type":"html","content":"<?xml version='1.0' encoding='UTF-8'?>\n<svg viewBox='0 0 576.00 360.00' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n<defs>\n<style type='text/css'>\n\n    line, polyline, path, rect, circle {\n      fill: none;\n      stroke: #000000;\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-miterlimit: 10.00;\n    }\n  \n</style>\n</defs>\n<rect style='stroke: none; fill: #FFFFFF;' height='100%' width='100%'/>\n<rect style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' height='360.00' width='576.00' y='0.00' x='0.00'/>\n<defs>\n<clipPath id='3039d97a-c076-4a7f-90e8-5c5a427625f5'>\n<rect height='321.79' width='529.35' y='5.48' x='41.17'/>\n</clipPath>\n</defs>\n<rect clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: none; fill: #EBEBEB;' height='321.79' width='529.35' y='5.48' x='41.17'/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='41.17,326.06 570.52,326.06 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='41.17,190.96 570.52,190.96 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='41.17,55.86 570.52,55.86 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='77.20,327.27 77.20,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='257.66,327.27 257.66,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='438.12,327.27 438.12,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='41.17,258.51 570.52,258.51 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='41.17,123.41 570.52,123.41 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='167.43,327.27 167.43,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='347.89,327.27 347.89,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='528.35,327.27 528.35,5.48 '/>\n<polyline clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 2.13; stroke: #4682B4; stroke-linecap: butt;' points='65.23,20.11 125.39,99.89 185.54,171.16 245.69,240.04 305.85,300.83 366.00,312.64 426.15,279.62 486.31,258.18 546.46,253.96 '/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='20.11' cx='65.23'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='99.89' cx='125.39'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='171.16' cx='185.54'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='240.04' cx='245.69'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='300.83' cx='305.85'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='312.64' cx='366.00'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='279.62' cx='426.15'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='258.18' cx='486.31'/>\n<circle clip-path='url(#3039d97a-c076-4a7f-90e8-5c5a427625f5)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='253.96' cx='546.46'/>\n<defs>\n<clipPath id='adbeb5c5-9112-4595-99d1-77ea5efa34ae'>\n<rect height='360.00' width='576.00' y='0.00' x='0.00'/>\n</clipPath>\n</defs>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='10.01px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='261.73' x='26.23'>\n10\n</text>\n</g>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='15.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='126.63' x='21.22'>\n100\n</text>\n</g>\n<polyline clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='38.43,258.51 41.17,258.51 '/>\n<polyline clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='38.43,123.41 41.17,123.41 '/>\n<polyline clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='167.43,330.01 167.43,327.27 '/>\n<polyline clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='347.89,330.01 347.89,327.27 '/>\n<polyline clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='528.35,330.01 528.35,327.27 '/>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='155.92'>\n1e-04\n</text>\n</g>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='336.38'>\n1e-01\n</text>\n</g>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='25.28px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='515.71'>\n1e+02\n</text>\n</g>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='36.68px' style='font-size: 11.00px; font-family: Arial;' y='351.99' x='287.51'>\ngamma\n</text>\n</g>\n<g clip-path='url(#adbeb5c5-9112-4595-99d1-77ea5efa34ae)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='47.68px' style='font-size: 11.00px; font-family: Arial;' transform='translate(13.35,190.21) rotate(-90)'>\nMSE_test\n</text>\n</g>\n</svg>\n","value":"#gg4clj.core.GGView{:plot-command [[:<- :g [:data.frame {:MSE_test [:c 581.6533338335992 149.3028206142586 44.3174743441859 13.700647069403027 4.861107070626411 3.9749682338960266 6.97861540596207 10.055849972146857 10.806649286545891], :gamma [:c 2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]}]] [:+ [:+ [:+ [:+ [:ggplot :g [:aes :gamma :MSE_test]] [:geom_line {:colour \"steelblue\", :size 1}]] [:geom_point {:colour \"steelblue\", :size 1}]] [:scale_x_log10]] [:scale_y_log10]]], :options {:width 8, :height 5}}"}
 ;; <=
 
-;; @@
+;; **
+;;; ##Exercise 5
+;;; ###Ridge regresssion with 20% of training set held for validation
+;; **
 
+;; @@
+;with 100 training set split with 20 held out for validation
+(def gamma_vals [])
+(def MSE_train_vals [])
+(def MSE_test_vals [])
+
+
+(for [i [2E-6 2E-5 2E-4 2E-3 2E-2 0.2 2.0 20.0 200.0]] 
+  (let [result (repeatedly 200 #(solve-RR-w 10 100 80 i))] 
+         
+       	(def gamma_vals (conj gamma_vals i))
+        (def MSE_train_vals (conj MSE_train_vals (s/mean (into [] (map :MSE_train result)))))
+        (def MSE_test_vals (conj MSE_test_vals (s/mean (into [] (map :MSE_test result)))))
+   )
+ )
+
+
+(def dat {:gamma gamma_vals :MSE_train MSE_train_vals})
+
+(gg4clj/view [[:<- :g (gg4clj/data-frame dat)]
+              (gg4clj/r+
+                [:ggplot :g [:aes :gamma :MSE_train]]
+                [:geom_line {:colour "steelblue" :size 1}]
+                [:geom_point {:colour "steelblue" :size 1}]
+                [:scale_x_log10]
+                [:scale_y_log10]
+                )]
+             {:width 8 :height 5})
+
+
+(def dat {:gamma gamma_vals :MSE_validation MSE_test_vals})
+
+(gg4clj/view [[:<- :g (gg4clj/data-frame dat)]
+              (gg4clj/r+
+                [:ggplot :g [:aes :gamma :MSE_validation]]
+                [:geom_line {:colour "steelblue" :size 1}]
+                [:geom_point {:colour "steelblue" :size 1}]
+                [:scale_x_log10]
+                [:scale_y_log10]
+                )]
+             {:width 8 :height 5})
+;; @@
+;; =>
+;;; {"type":"html","content":"<?xml version='1.0' encoding='UTF-8'?>\n<svg viewBox='0 0 576.00 360.00' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n<defs>\n<style type='text/css'>\n\n    line, polyline, path, rect, circle {\n      fill: none;\n      stroke: #000000;\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-miterlimit: 10.00;\n    }\n  \n</style>\n</defs>\n<rect style='stroke: none; fill: #FFFFFF;' height='100%' width='100%'/>\n<rect style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' height='360.00' width='576.00' y='0.00' x='0.00'/>\n<defs>\n<clipPath id='a87c2d9f-8995-4711-a77b-3023191b9a42'>\n<rect height='321.79' width='534.35' y='5.48' x='36.17'/>\n</clipPath>\n</defs>\n<rect clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: none; fill: #EBEBEB;' height='321.79' width='534.35' y='5.48' x='36.17'/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='36.17,169.84 570.52,169.84 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='72.54,327.27 72.54,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='254.70,327.27 254.70,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='436.87,327.27 436.87,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='36.17,325.94 570.52,325.94 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='36.17,13.73 570.52,13.73 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='163.62,327.27 163.62,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='345.79,327.27 345.79,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='527.95,327.27 527.95,5.48 '/>\n<polyline clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 2.13; stroke: #4682B4; stroke-linecap: butt;' points='60.46,312.04 121.18,305.58 181.90,309.21 242.62,312.64 303.34,310.86 364.07,309.02 424.79,263.11 485.51,81.83 546.23,20.11 '/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='312.04' cx='60.46'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='305.58' cx='121.18'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='309.21' cx='181.90'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='312.64' cx='242.62'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='310.86' cx='303.34'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='309.02' cx='364.07'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='263.11' cx='424.79'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='81.83' cx='485.51'/>\n<circle clip-path='url(#a87c2d9f-8995-4711-a77b-3023191b9a42)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='20.11' cx='546.23'/>\n<defs>\n<clipPath id='3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1'>\n<rect height='360.00' width='576.00' y='0.00' x='0.00'/>\n</clipPath>\n</defs>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='5.01px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='329.16' x='26.23'>\n1\n</text>\n</g>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='10.01px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='16.95' x='21.22'>\n10\n</text>\n</g>\n<polyline clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='33.43,325.94 36.17,325.94 '/>\n<polyline clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='33.43,13.73 36.17,13.73 '/>\n<polyline clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='163.62,330.01 163.62,327.27 '/>\n<polyline clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='345.79,330.01 345.79,327.27 '/>\n<polyline clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='527.95,330.01 527.95,327.27 '/>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='152.11'>\n1e-04\n</text>\n</g>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='334.28'>\n1e-01\n</text>\n</g>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='25.28px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='515.31'>\n1e+02\n</text>\n</g>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='36.68px' style='font-size: 11.00px; font-family: Arial;' y='351.99' x='285.00'>\ngamma\n</text>\n</g>\n<g clip-path='url(#3d48e11c-5cf0-46bb-9c35-bf9ac6e4bac1)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='76.43px' style='font-size: 11.00px; font-family: Arial;' transform='translate(13.35,204.59) rotate(-90)'>\nMSE_validation\n</text>\n</g>\n</svg>\n","value":"#gg4clj.core.GGView{:plot-command [[:<- :g [:data.frame {:MSE_validation [:c 1.1079411693636547 1.162037238968645 1.1313496987890448 1.103082842914268 1.117641521528765 1.132889305601941 1.5894033612666447 6.0515479998966795 9.540511374810558], :gamma [:c 2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]}]] [:+ [:+ [:+ [:+ [:ggplot :g [:aes :gamma :MSE_validation]] [:geom_line {:colour \"steelblue\", :size 1}]] [:geom_point {:colour \"steelblue\", :size 1}]] [:scale_x_log10]] [:scale_y_log10]]], :options {:width 8, :height 5}}"}
+;; <=
+
+;; @@
+dat
+;; @@
+;; =>
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:gamma</span>","value":":gamma"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>2.0E-6</span>","value":"2.0E-6"},{"type":"html","content":"<span class='clj-double'>2.0E-5</span>","value":"2.0E-5"},{"type":"html","content":"<span class='clj-double'>2.0E-4</span>","value":"2.0E-4"},{"type":"html","content":"<span class='clj-double'>0.002</span>","value":"0.002"},{"type":"html","content":"<span class='clj-double'>0.02</span>","value":"0.02"},{"type":"html","content":"<span class='clj-double'>0.2</span>","value":"0.2"},{"type":"html","content":"<span class='clj-double'>2.0</span>","value":"2.0"},{"type":"html","content":"<span class='clj-double'>20.0</span>","value":"20.0"},{"type":"html","content":"<span class='clj-double'>200.0</span>","value":"200.0"}],"value":"[2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]"}],"value":"[:gamma [2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:MSE_validation</span>","value":":MSE_validation"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>1.1079411693636547</span>","value":"1.1079411693636547"},{"type":"html","content":"<span class='clj-double'>1.162037238968645</span>","value":"1.162037238968645"},{"type":"html","content":"<span class='clj-double'>1.1313496987890448</span>","value":"1.1313496987890448"},{"type":"html","content":"<span class='clj-double'>1.103082842914268</span>","value":"1.103082842914268"},{"type":"html","content":"<span class='clj-double'>1.117641521528765</span>","value":"1.117641521528765"},{"type":"html","content":"<span class='clj-double'>1.132889305601941</span>","value":"1.132889305601941"},{"type":"html","content":"<span class='clj-double'>1.5894033612666447</span>","value":"1.5894033612666447"},{"type":"html","content":"<span class='clj-double'>6.0515479998966795</span>","value":"6.0515479998966795"},{"type":"html","content":"<span class='clj-double'>9.540511374810558</span>","value":"9.540511374810558"}],"value":"[1.1079411693636547 1.162037238968645 1.1313496987890448 1.103082842914268 1.117641521528765 1.132889305601941 1.5894033612666447 6.0515479998966795 9.540511374810558]"}],"value":"[:MSE_validation [1.1079411693636547 1.162037238968645 1.1313496987890448 1.103082842914268 1.117641521528765 1.132889305601941 1.5894033612666447 6.0515479998966795 9.540511374810558]]"}],"value":"{:gamma [2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0], :MSE_validation [1.1079411693636547 1.162037238968645 1.1313496987890448 1.103082842914268 1.117641521528765 1.132889305601941 1.5894033612666447 6.0515479998966795 9.540511374810558]}"}
+;; <=
+
+;; @@
+;use gamma = 0.002 with lowest test error
+(let [result (repeatedly 200 #(solve-RR-w 10 600 100 0.002))] 
+         
+        (def MSE_test (s/mean (into [] (map :MSE_test result)))))
+MSE_test
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-double'>1.1074515893325767</span>","value":"1.1074515893325767"}
+;; <=
+
+;; @@
+;with 10 training set split with 2 held out for validation
+(def gamma_vals [])
+(def MSE_train_vals [])
+(def MSE_test_vals [])
+
+
+(for [i [2E-6 2E-5 2E-4 2E-3 2E-2 0.2 2.0 20.0 200.0]] 
+  (let [result (repeatedly 200 #(solve-RR-w 10 10 8 i))] 
+         
+       	(def gamma_vals (conj gamma_vals i))
+        (def MSE_train_vals (conj MSE_train_vals (s/mean (into [] (map :MSE_train result)))))
+        (def MSE_test_vals (conj MSE_test_vals (s/mean (into [] (map :MSE_test result)))))
+   )
+ )
+
+
+(def dat {:gamma gamma_vals :MSE_train MSE_train_vals})
+
+(gg4clj/view [[:<- :g (gg4clj/data-frame dat)]
+              (gg4clj/r+
+                [:ggplot :g [:aes :gamma :MSE_train]]
+                [:geom_line {:colour "steelblue" :size 1}]
+                [:geom_point {:colour "steelblue" :size 1}]
+                [:scale_x_log10]
+                [:scale_y_log10]
+                )]
+             {:width 8 :height 5})
+
+
+(def dat {:gamma gamma_vals :MSE_validation MSE_test_vals})
+
+(gg4clj/view [[:<- :g (gg4clj/data-frame dat)]
+              (gg4clj/r+
+                [:ggplot :g [:aes :gamma :MSE_validation]]
+                [:geom_line {:colour "steelblue" :size 1}]
+                [:geom_point {:colour "steelblue" :size 1}]
+                [:scale_x_log10]
+                [:scale_y_log10]
+                )]
+             {:width 8 :height 5})
+;; @@
+;; =>
+;;; {"type":"html","content":"<?xml version='1.0' encoding='UTF-8'?>\n<svg viewBox='0 0 576.00 360.00' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>\n<defs>\n<style type='text/css'>\n\n    line, polyline, path, rect, circle {\n      fill: none;\n      stroke: #000000;\n      stroke-linecap: round;\n      stroke-linejoin: round;\n      stroke-miterlimit: 10.00;\n    }\n  \n</style>\n</defs>\n<rect style='stroke: none; fill: #FFFFFF;' height='100%' width='100%'/>\n<rect style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' height='360.00' width='576.00' y='0.00' x='0.00'/>\n<defs>\n<clipPath id='0eb10a6f-bbb4-494e-a2a2-550224be5948'>\n<rect height='321.79' width='534.35' y='5.48' x='36.17'/>\n</clipPath>\n</defs>\n<rect clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 1.07; stroke: none; fill: #EBEBEB;' height='321.79' width='534.35' y='5.48' x='36.17'/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='72.54,327.27 72.54,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='254.70,327.27 254.70,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.53; stroke: #FFFFFF; stroke-linecap: butt;' points='436.87,327.27 436.87,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='36.17,86.65 570.52,86.65 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='163.62,327.27 163.62,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='345.79,327.27 345.79,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' points='527.95,327.27 527.95,5.48 '/>\n<polyline clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 2.13; stroke: #4682B4; stroke-linecap: butt;' points='60.46,110.55 121.18,63.70 181.90,20.11 242.62,182.02 303.34,312.64 364.07,311.69 424.79,201.97 485.51,51.82 546.23,80.59 '/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='110.55' cx='60.46'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='63.70' cx='121.18'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='20.11' cx='181.90'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='182.02' cx='242.62'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='312.64' cx='303.34'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='311.69' cx='364.07'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='201.97' cx='424.79'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='51.82' cx='485.51'/>\n<circle clip-path='url(#0eb10a6f-bbb4-494e-a2a2-550224be5948)' style='stroke-width: 0.71; stroke: #4682B4; fill: #4682B4;' r='1.42pt' cy='80.59' cx='546.23'/>\n<defs>\n<clipPath id='fb1f6618-d42e-4fd7-935f-6b1f372aec62'>\n<rect height='360.00' width='576.00' y='0.00' x='0.00'/>\n</clipPath>\n</defs>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='10.01px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='89.87' x='21.22'>\n10\n</text>\n</g>\n<polyline clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='33.43,86.65 36.17,86.65 '/>\n<polyline clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='163.62,330.01 163.62,327.27 '/>\n<polyline clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='345.79,330.01 345.79,327.27 '/>\n<polyline clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' points='527.95,330.01 527.95,327.27 '/>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='152.11'>\n1e-04\n</text>\n</g>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='23.02px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='334.28'>\n1e-01\n</text>\n</g>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='25.28px' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' y='338.63' x='515.31'>\n1e+02\n</text>\n</g>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='36.68px' style='font-size: 11.00px; font-family: Arial;' y='351.99' x='285.00'>\ngamma\n</text>\n</g>\n<g clip-path='url(#fb1f6618-d42e-4fd7-935f-6b1f372aec62)'>\n<text lengthAdjust='spacingAndGlyphs' textLength='76.43px' style='font-size: 11.00px; font-family: Arial;' transform='translate(13.35,204.59) rotate(-90)'>\nMSE_validation\n</text>\n</g>\n</svg>\n","value":"#gg4clj.core.GGView{:plot-command [[:<- :g [:data.frame {:MSE_validation [:c 9.362686478260636 10.652782932274073 12.01219700937316 7.6891193968969995 5.365192481193077 5.379201003573111 7.277880764666424 11.007286326710455 10.168230020918509], :gamma [:c 2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]}]] [:+ [:+ [:+ [:+ [:ggplot :g [:aes :gamma :MSE_validation]] [:geom_line {:colour \"steelblue\", :size 1}]] [:geom_point {:colour \"steelblue\", :size 1}]] [:scale_x_log10]] [:scale_y_log10]]], :options {:width 8, :height 5}}"}
+;; <=
+
+;; @@
+dat
+;; @@
+;; =>
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:gamma</span>","value":":gamma"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>2.0E-6</span>","value":"2.0E-6"},{"type":"html","content":"<span class='clj-double'>2.0E-5</span>","value":"2.0E-5"},{"type":"html","content":"<span class='clj-double'>2.0E-4</span>","value":"2.0E-4"},{"type":"html","content":"<span class='clj-double'>0.002</span>","value":"0.002"},{"type":"html","content":"<span class='clj-double'>0.02</span>","value":"0.02"},{"type":"html","content":"<span class='clj-double'>0.2</span>","value":"0.2"},{"type":"html","content":"<span class='clj-double'>2.0</span>","value":"2.0"},{"type":"html","content":"<span class='clj-double'>20.0</span>","value":"20.0"},{"type":"html","content":"<span class='clj-double'>200.0</span>","value":"200.0"}],"value":"[2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]"}],"value":"[:gamma [2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0]]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:MSE_validation</span>","value":":MSE_validation"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>9.362686478260636</span>","value":"9.362686478260636"},{"type":"html","content":"<span class='clj-double'>10.652782932274073</span>","value":"10.652782932274073"},{"type":"html","content":"<span class='clj-double'>12.01219700937316</span>","value":"12.01219700937316"},{"type":"html","content":"<span class='clj-double'>7.6891193968969995</span>","value":"7.6891193968969995"},{"type":"html","content":"<span class='clj-double'>5.365192481193077</span>","value":"5.365192481193077"},{"type":"html","content":"<span class='clj-double'>5.379201003573111</span>","value":"5.379201003573111"},{"type":"html","content":"<span class='clj-double'>7.277880764666424</span>","value":"7.277880764666424"},{"type":"html","content":"<span class='clj-double'>11.007286326710455</span>","value":"11.007286326710455"},{"type":"html","content":"<span class='clj-double'>10.168230020918509</span>","value":"10.168230020918509"}],"value":"[9.362686478260636 10.652782932274073 12.01219700937316 7.6891193968969995 5.365192481193077 5.379201003573111 7.277880764666424 11.007286326710455 10.168230020918509]"}],"value":"[:MSE_validation [9.362686478260636 10.652782932274073 12.01219700937316 7.6891193968969995 5.365192481193077 5.379201003573111 7.277880764666424 11.007286326710455 10.168230020918509]]"}],"value":"{:gamma [2.0E-6 2.0E-5 2.0E-4 0.002 0.02 0.2 2.0 20.0 200.0], :MSE_validation [9.362686478260636 10.652782932274073 12.01219700937316 7.6891193968969995 5.365192481193077 5.379201003573111 7.277880764666424 11.007286326710455 10.168230020918509]}"}
+;; <=
+
+;; @@
+;use gamma = 0.02 with lowest test error
+(let [result (repeatedly 200 #(solve-RR-w 10 510 10 0.02))] 
+         
+        (def MSE_test (s/mean (into [] (map :MSE_test result)))))
+MSE_test
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-double'>4.791503807263449</span>","value":"4.791503807263449"}
+;; <=
+
+;; @@
+;solve-RR-w [n_of_dimensions n_of_samps training_set_size gamma]
+
+;find average of gamma over 200 runs with 100 and 10 sample training set
+(def gamma_vals [])
+(def MSE_train_vals [])
+(def MSE_test_vals [])
+
+
+(for [i [2E-6 2E-5 2E-4 2E-3 2E-2 0.2 2.0 20.0 200.0]] 
+  (let [result (repeatedly 200 #(solve-RR-w 10 10 8 i))] 
+         
+       	(def gamma_vals (conj gamma_vals i))
+        (def MSE_train_vals (conj MSE_train_vals (s/mean (into [] (map :MSE_train result)))))
+        (def MSE_test_vals (conj MSE_test_vals (s/mean (into [] (map :MSE_test result)))))
+   )
+ )
 ;; @@
