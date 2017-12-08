@@ -527,3 +527,82 @@ MSE_test
    )
  )
 ;; @@
+
+;; **
+;;; ###Exercise 6 Cross Validation
+;; **
+
+;; @@
+(defn split-for-cross-validation [m k split-n]
+  (let [n (- split-n 1)
+        rows (row-count m)
+        cols (column-count m)
+        rows-per-fold (/ (row-count m) k)
+        first-split (int (* rows-per-fold n))
+        second-split (int (+ (* rows-per-fold n) rows-per-fold))
+        delta-split (- second-split first-split)
+                       
+        above-validation (submatrix m 0 (int (ceil first-split)) 0 cols)
+        validation (submatrix m first-split delta-split 0 cols)
+        below-validation (submatrix m second-split (- rows second-split) 0 cols)
+         
+        train (join above-validation below-validation)]
+       
+        {:train train :validation validation}))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/split-for-cross-validation</span>","value":"#'cw1_worksheet/split-for-cross-validation"}
+;; <=
+
+;; @@
+(def a (r/sample-normal [10 1]))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;cw1_worksheet/a</span>","value":"#'cw1_worksheet/a"}
+;; <=
+
+;; @@
+(pm a)
+;; @@
+;; ->
+;;; [[ 0.730]
+;;;  [-0.679]
+;;;  [-0.273]
+;;;  [-0.508]
+;;;  [ 0.206]
+;;;  [ 0.340]
+;;;  [-0.838]
+;;;  [ 0.818]
+;;;  [ 1.901]
+;;;  [ 1.047]]
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(def n 4)
+(pm ((split-for-cross-validation a 5 n) :train))
+(pm ((split-for-cross-validation a 5 n) :validation))
+;; @@
+;; ->
+;;; [[ 0.730]
+;;;  [-0.679]
+;;;  [-0.273]
+;;;  [-0.508]
+;;;  [ 0.206]
+;;;  [ 0.340]
+;;;  [ 1.901]
+;;;  [ 1.047]]
+;;; [[-0.838]
+;;;  [ 0.818]]
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+
+;; @@
